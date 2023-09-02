@@ -71,7 +71,7 @@ class SQLite_Repository:
         return rows_affected
 
 
-    def closeConnection(self):
+    def close_connection(self):
         if self.connection:
             self._db.close()
             print("Conexão com o SQLite encerrada com sucesso!")
