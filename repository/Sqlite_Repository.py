@@ -1,5 +1,11 @@
+from decouple import AutoConfig
+config = AutoConfig()
+path_to_root = config("PATH_TO_ROOT_PROJECT", default=None)
+import sys
+sys.path.append(path_to_root)
+
 from sqlite3 import Connection, Cursor, Row
-from repository_utils import get_where_clause_conditions
+from repository.repository_utils import get_where_clause_conditions
 
 class SQLite_Repository:
     def __init__(self, connection: Connection) -> None:

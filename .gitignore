@@ -2,3 +2,5 @@ dev
 assets
 repository/__pycache__
 domain/__pycache__
+.env
+seeder/mydb.db
