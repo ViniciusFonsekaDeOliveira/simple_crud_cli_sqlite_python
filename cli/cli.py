@@ -35,10 +35,15 @@ def listarTodas():
     
     results = repository.findAll("Person")
 
+    name_list = []
     for person in results:
-        print(person["firstname"])
+        name_list.append(person["firstname"])
     
-   
+    name_list.sort()
+    for name in name_list:
+        print(name)
+    
+
 def procurarAlguma():
     firstname = input("\nDigite o primeiro nome: ")
     lastname = input("\nDigite o ultimo nome: ")
