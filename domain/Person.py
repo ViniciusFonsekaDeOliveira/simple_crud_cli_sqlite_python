@@ -4,6 +4,7 @@ class Person:
         self._firstname = firstname
         self._lastname = lastname
         self._nickname = nickname
+        self._email = email
     
     @property
     def uuid(self):
@@ -69,9 +70,10 @@ class Person:
         if isinstance(other, Person):
             return (self.email == other.email and 
                     self.firstname == other.firstname and 
-                    self.lastname == other.lastname and 
+                    self.lastname == other.lastname and
+                    self.uuid == other.uuid and
                     self.nickname == other.nickname)
         return False
     
     def __hash__(self) -> int:
-        return hash(self.firstname) ^ hash(self.lastname) ^ hash(self.nickname) ^ hash(self.email)
+        return hash(self.uuid) ^ hash(self.firstname) ^ hash(self.lastname) ^ hash(self.nickname) ^ hash(self.email)

@@ -8,4 +8,4 @@ def get_where_clause_conditions(data_identifier: dict):
         conditions = ' AND '.join(clause_conditions)
         return conditions, clause_values
     else:
-        print("Where-clause must be at least size 1, but nothing was provided.")
+        raise ValueError("Where-clause must be at least size 1, but nothing was provided.")
